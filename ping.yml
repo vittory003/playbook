@@ -1,13 +1,5 @@
 ---
 - name: test_ascender
-  hosts: all
-  gather_facts: false
-  become: true
   tasks:
     - name: Grab current os version
-      ansible.builtin.shell: cat /etc/os-release | grep PRETTY_NAME
-      register: ver_post
-
-    - name: Display before and after versions
-      ansible.builtin.debug:
-        msg: "Version before {{ ver_pre.stdout | regex_replace('PRETTY_NAME=','') }}.  Version after {{ ver_post.stdout | regex_replace('PRETTY_NAME=','') }}."
+      ansible.builtin.shell: cat /etc/*release
