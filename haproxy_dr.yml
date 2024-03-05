@@ -1,0 +1,22 @@
+---
+- name: Move haproxy_DR.cfg from /tmp to sysop's home directory
+  hosts: all
+  become: yes
+  tasks:
+    - name: Copy haproxy_DR.cfg from /tmp to sysop's home directory
+      copy:
+        src: /tmp/haproxy_dr.cfg
+        dest: /home/sysop/haproxy.cfg
+        remote_src: yes
+
+    - name: Set permissions on haproxy.cfg
+      file:
+        path: /home/sysop/haproxy.cfg
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Restart haproxy
+      systemd:
+        name: haproxy
+        state: restarted
