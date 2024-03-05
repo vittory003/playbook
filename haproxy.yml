@@ -1,7 +1,6 @@
 ---
 - name: Copy haproxy_DR.cfg and restart haproxy
   hosts: all
-  become: yes
   tasks:
     - name: Copy haproxy_DR.cfg
       copy:
