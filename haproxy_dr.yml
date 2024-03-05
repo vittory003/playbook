@@ -1,17 +1,17 @@
 ---
-- name: Move haproxy_DR.cfg from /tmp to sysop's home directory
+- name: Move DR_cfg
   hosts: all
   become: yes
   tasks:
-    - name: Copy haproxy_DR.cfg from /tmp to sysop's home directory
+    - name: Copy DR_cfg 
       copy:
         src: /tmp/haproxy_dr.cfg
-        dest: /home/sysop/haproxy.cfg
+        dest: /etc/haproxy/haproxy.cfg
         remote_src: yes
 
-    - name: Set permissions on haproxy.cfg
+    - name: Set permissions
       file:
-        path: /home/sysop/haproxy.cfg
+        path: /etc/haproxy/haproxy.cfg
         owner: root
         group: root
         mode: "0644"
