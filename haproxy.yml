@@ -4,7 +4,7 @@
   tasks:
     - name: Copy haproxy_DR.cfg
       copy:
-        src: /var/lib/awx/projects/_13__sdc/haproxy_dr.cfg
+        src: /tmp/haproxy
         dest: /home/sysop/haproxy.cfg
       notify: Restart haproxy
       delegate_to: localhost
