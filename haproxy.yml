@@ -1,15 +1,13 @@
 ---
-- name: Copy haproxy_DR.cfg and restart haproxy
+- name: Haproxy_DR.cfg 
   hosts: all
   tasks:
-    - name: Copy haproxy_DR.cfg
+    - name: Copy haproxy_DR.cfg from /tmp
       copy:
-        src: /tmp/haproxy
+        src: /tmp/haproxy_dr.cfg
         dest: /home/sysop/haproxy.cfg
-      notify: Restart haproxy
-      delegate_to: localhost
+        remote_src: yes
 
-  handlers:
     - name: Restart haproxy
       systemd:
         name: haproxy
