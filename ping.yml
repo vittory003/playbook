@@ -1,5 +1,0 @@
----
-- name: test_ascender
-  tasks:
-    - name: Grab current os version
-      ansible.builtin.shell: cat /etc/*release
