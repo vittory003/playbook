@@ -4,7 +4,7 @@
   tasks:
     - name: Copy haproxy_DR.cfg
       copy:
-        src: /tmp/haproxy/haproxy.cfg
+        src: /tmp/haproxy_dr.cfg
         dest: /home/sysop/haproxy.cfg
       notify: Restart haproxy
 
