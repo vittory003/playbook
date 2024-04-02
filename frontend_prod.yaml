@@ -1,0 +1,24 @@
+---
+- name: Modifica e montaggio della share NFS
+  hosts: all
+  tasks:
+    - name: Modifica il mount se presente
+      replace:
+        path: /etc/fstab
+        regexp: '172.30.111.39:/rm_fs_wt_frontend_prod'
+        replace: 'doc-nas-be.dc.nas.local:/rm_fs_wt_frontend_prod'
+      become: true
+      notify: Mount NFS
+
+    - name: Umount della share NFS
+      command: umount /mnt/rm_fs_wt_frontend_prod
+      become: true
+
+    - name: Montaggio della share NFS
+      command: mount /mnt/rm_fs_wt_frontend_prod
+      become: true
+      notify: Mount NFS
+
+  handlers:
+    - name: Mount NFS
+      command: mount -a
