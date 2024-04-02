@@ -18,7 +18,3 @@
       command: mount /mnt/rm_fs_wt_frontend_prod
       become: true
       notify: Mount NFS
-
-  handlers:
-    - name: Mount NFS
-      command: mount -a
