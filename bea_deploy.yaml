@@ -18,7 +18,3 @@
       command: mount /opt/fs_bea_deploy
       become: true
       notify: Mount NFS
-
-  handlers:
-    - name: Mount NFS
-      command: mount -a
