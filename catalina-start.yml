@@ -1,4 +1,6 @@
-/home/sdcwf/apache-tomcat-9.0.37/bin/catalina.sh start
-/home/sdcwf/apache-tomcat-9.0.37/bin/catalina.sh start
-/home/sdcwf/apache-tomcat-9.0.37/bin/catalina.sh start
-/home/sdcwf/apache-tomcat-9.0.37/bin/catalina.sh start
+---
+- name: start sdc-p-fe-DR
+  hosts: all
+  tasks:
+    - name: catalina.sh start
+      command: /home/sdcwf/apache-tomcat-9.0.37/bin/catalina.sh start
