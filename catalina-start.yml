@@ -1,6 +1,8 @@
 ---
-- name: start sdc-p-fe-DR
+- name: start catalina
   hosts: all
+  become: yes
+  become_user: sdcwf
   tasks:
-    - name: catalina.sh start
-      command: /home/sdcwf/apache-tomcat-9.0.37/bin/catalina.sh start
+    - name: Avvia Tomcat
+      command: "/home/sdcwf/apache-tomcat-9.0.37/bin/catalina.sh start"
