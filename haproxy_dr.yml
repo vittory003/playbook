@@ -5,7 +5,7 @@
   tasks:
     - name: Copy DR_cfg 
       copy:
-        src: /tmp/haproxy_dr.cfg
+        src: /home/sysop/haproxy_dr.cfg
         dest: /etc/haproxy/haproxy.cfg
         remote_src: yes
 
