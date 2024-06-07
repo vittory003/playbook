@@ -1,0 +1,7 @@
+---
+- name: start Apachectl
+  hosts: all
+  become: yes
+  tasks:
+    - name: start Apachectl
+      command: "/usr/sbin/apachectl start"
