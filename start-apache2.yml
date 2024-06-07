@@ -1,0 +1,7 @@
+---
+- name: start ws
+  hosts: all
+  become: yes
+  tasks:
+    - name: start Apache2
+      command: "/opt/apache2/bin/apachectl start"
