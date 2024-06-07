@@ -1,0 +1,8 @@
+---
+- name: start loader
+  hosts: all
+  become: yes
+  become_user: sdcwf
+  tasks:
+    - name: Esegui lo script
+      command: "/home/sdcwf/app/loader/bin/run.sh"
