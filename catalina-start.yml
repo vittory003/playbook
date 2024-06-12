@@ -4,9 +4,9 @@
   become: yes
   become_user: sdcwf
   environment:
-     JAVA_HOME:"/home/sdcwf/jdk1.8.0_211"
-     CATALINA_HOME:"/home/sdcwf/apache-tomcat-9.0.37
-     JAVA_PATH:"/home/sdcwf/jdk1.8.0_211"
+     JAVA_HOME: "/home/sdcwf/jdk1.8.0_211"
+     CATALINA_HOME: "/home/sdcwf/apache-tomcat-9.0.37
+     JAVA_PATH: "/home/sdcwf/jdk1.8.0_211"
   tasks:
     - name: Avvia Tomcat
       command: "/home/sdcwf/apache-tomcat-9.0.37/bin/catalina.sh start"
